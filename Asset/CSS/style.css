@@ -1,0 +1,20 @@
+:root{
+    --main-color: #272727;
+    --primary-color: #c5a364;
+    --secondary-color: #DBC9a5;
+    --thired-color:#ffffff;
+}
+
+/* Reset CSS  */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    background-color: #faf7f4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* 
+    to use variable in CSS 
+    Example : background-color: var(--main-color);
+*/
