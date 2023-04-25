@@ -1,4 +1,4 @@
-:root{
+:root {
     --main-color: #272727;
     --primary-color: #c5a364;
     --secondary-color: #DBC9a5;
@@ -6,15 +6,173 @@
 }
 
 /* Reset CSS  */
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     text-decoration: none;
-    background-color: #faf7f4;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 /* 
     to use variable in CSS 
     Example : background-color: var(--main-color);
 */
+
+header {
+    top: 0;
+    width: 100%;
+    position: fixed;
+    height: 100px;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-part {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: inherit;
+}
+
+.nav-part a {
+    display: flex;
+    margin: 0px 5px;
+    background-color: inherit;
+    color: var(--thired-color);
+}
+
+header .nav-part:last-child a {
+    margin-right: 10px;
+}
+
+.nav-part a b {
+    background-color: inherit;
+}
+
+header .search-bar {
+    height: 32px;
+    width: 25%;
+    display: flex;
+    font-size: 17px;
+    border-radius: 15px;
+    background-color: var(--thired-color);
+}
+
+header .nav-part #magnifying-glass {
+    padding-right: 10px;
+    height: 75%;
+    background-color: transparent;
+}
+
+.logo picture img {
+    display: flex;
+    height: 100px;
+    width: auto;
+    background-color: var(--main-color);
+    padding: 2px;
+}
+
+/* Style the search box inside the navigation bar */
+header input[type=text] {
+    display: flex;
+    padding: 6px;
+    font-size: 17px;
+    border: none;
+    border-radius: 15px;
+    background-color: inherit;
+}
+
+header .nav-part #shopping-cart {
+    display: flex;
+    padding: 5px;
+    height: 50px;
+    width: auto;
+    background-color: inherit;
+    color: var(--secondary-color);
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 100px;
+    background-color: var(--main-color);
+    font-size: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .nav-part {
+    height: inherit;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--thired-color);
+}
+
+#contact-div {
+    width: 30%;
+    align-items: flex-start;
+}
+
+#about-div {
+    width: 20%;
+}
+
+footer .nav-part:first-child {
+    border-right: 1px solid var(--thired-color);
+}
+
+footer .logo picture img {
+    display: flex;
+    height: 50px;
+    width: auto;
+    background-color: var(--main-color);
+    padding: 2px;
+}
+
+.social-media-div {
+    max-width: 350px;
+    height: inherit;
+    width: 25%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--thired-color);
+    margin-right: 20px;
+}
+
+.social-media {
+    height: 50px;
+    width: 50px;
+}
+
+/* button */
+
+.btn{
+    background-color: var(--main-color); /* set the background color */
+    border: none; /* remove the border */
+    color: white; /* set the text color */
+    padding: 15px 32px; /* add some padding */
+    text-align: center; /* center the text */
+    text-decoration: none; /* remove underlines */
+    display: inline-block; /* display as an inline-block element */
+    font-size: 16px; /* set the font size */
+    margin: 4px 2px; /* add some margin */
+    cursor: pointer; /* add a cursor on hover */
+    margin-right: auto; /* push the button to the left */
+    border-radius: 5%;
+    text-transform: capitalize;
+}
+
+.btn:hover{
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(0,0,0,0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
+}
