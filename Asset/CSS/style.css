@@ -26,7 +26,7 @@
 header {
     top: 0;
     width: 100%;
-    top:0;
+    top: 0;
     z-index: 999;
     position: sticky;
     height: 100px;
@@ -37,6 +37,7 @@ header {
 }
 
 .nav-part {
+    height: inherit;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,10 +45,18 @@ header {
 }
 
 .nav-part a {
+    height: inherit;
+    width: 75px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0px 5px;
     background-color: inherit;
     color: var(--third-color);
+}
+
+#active {
+    background-color: var(--primary-color);
 }
 
 header .nav-part:last-child a {
@@ -63,7 +72,7 @@ header .search-bar {
     width: 30%;
     display: flex;
     font-size: 17px;
-    border-radius: 5px;
+    border-radius: 15px;
     background-color: var(--third-color);
 }
 
@@ -83,11 +92,12 @@ header .nav-part #magnifying-glass {
 
 /* Style the search box inside the navigation bar */
 header input[type=text] {
-    all:unset;
+    all: unset;
     display: flex;
     padding: 6px;
     font-size: 17px;
     border: none;
+    border-radius: 15px;
     background-color: inherit;
 }
 
@@ -160,24 +170,35 @@ footer .logo picture img {
 
 /* button */
 
-.btn{
-    background-color: var(--main-color); /* set the background color */
-    border: none; /* remove the border */
-    color: white; /* set the text color */
-    padding: 15px 32px; /* add some padding */
-    text-align: center; /* center the text */
-    text-decoration: none; /* remove underlines */
-    display: inline-block; /* display as an inline-block element */
-    font-size: 16px; /* set the font size */
-    margin: 4px 2px; /* add some margin */
-    cursor: pointer; /* add a cursor on hover */
-    margin-right: auto; /* push the button to the left */
+.btn {
+    background-color: var(--main-color);
+    /* set the background color */
+    border: none;
+    /* remove the border */
+    color: white;
+    /* set the text color */
+    padding: 15px 32px;
+    /* add some padding */
+    text-align: center;
+    /* center the text */
+    text-decoration: none;
+    /* remove underlines */
+    display: inline-block;
+    /* display as an inline-block element */
+    font-size: 16px;
+    /* set the font size */
+    margin: 4px 2px;
+    /* add some margin */
+    cursor: pointer;
+    /* add a cursor on hover */
+    margin-right: auto;
+    /* push the button to the left */
     border-radius: 5%;
     text-transform: capitalize;
 }
 
-.btn:hover{
-    box-shadow: 0 0.4rem 1.4rem 0 rgba(0,0,0,0.5);
+.btn:hover {
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(0, 0, 0, 0.5);
     transform: translateY(-0.1rem);
     transition: transform 150ms;
 }
