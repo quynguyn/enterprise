@@ -105,9 +105,13 @@
 
 .grid-item .product-sub-container.product-information .content p {
     display: flex;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 .grid-item .product-sub-container.product-information .content button {
     float: right;
     width: fit-content;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
