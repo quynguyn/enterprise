@@ -19,8 +19,8 @@
 }
 
 .grid-item {
-    height: fit-content;
-    width: fit-content;
+    height: 350px;
+    width: 250px;
     position: relative;
     cursor: pointer;
 
