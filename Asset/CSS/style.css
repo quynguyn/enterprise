@@ -18,10 +18,15 @@
 .main-container {
     margin: 0px 15px;
 }
+
 /* 
     to use variable in CSS 
     Example : background-color: var(--main-color);
 */
+
+.col-half {
+    width: calc(100%/2);
+}
 
 header {
     top: 0;
