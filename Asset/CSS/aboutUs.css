@@ -1,0 +1,67 @@
+.about-container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    margin: 5px 20px;
+}
+
+.members-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+}
+
+.member-data {
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid red;
+    padding: 10px;
+}
+
+.member-details {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+}
+
+.member-details .name{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.member-image {
+    display: flex;
+}
+
+.member-image img {
+    width: auto;
+    height: 150px;
+}
+
+.groups-container {
+    display: flex;
+    border: 1px solid red;
+}
+
+.group-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.group-details .name {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.group-details .description {
+    display: flex;
+}
+
+.group-image {
+    display: flex;
+}
+
+.group-image img {
+    width: 150px;
+    height: 150px;
+}
