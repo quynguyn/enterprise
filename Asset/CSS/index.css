@@ -1,5 +1,5 @@
 .main-container {
-    margin: 10% 20px;
+    margin: 0px 15px;
 }
 
 .grid-container {
@@ -13,14 +13,12 @@
 .product-img {
     display: flex;
     align-items: center;
-    height: 50px;
-    margin: 0;
-    padding: 0;
+    height: 80px;
 }
 
 .grid-item {
-    height: fit-content;
-    width: fit-content;
+    height: 260px;
+    width: 240px;
     position: relative;
     cursor: pointer;
 
@@ -33,14 +31,16 @@
 
     background-color: var(--third-color);
     flex-direction: column;
+   
 }
 
 .grid-item .product-sub-container {
     transition: 0.5s;
 }
 
+
 .grid-item .product-sub-container.product-image {
-    width: 125px;
+    width: 100%;
     height: 125px;
 
     position: relative;
@@ -52,22 +52,20 @@
     align-items: center;
     z-index: 1;
     transform: translateY(20px);
+    border: 3px solid var(--primary-color);
 }
 
-.grid-item:hover .product-sub-container.product-image {
+.grid-item:hover .product-sub-container .product-image {
     color: var(--primary-color);
     transform: translateY(0);
-    /* width: 100%;
-    height: 100%; */
+
 }
 
 .grid-item .product-sub-container.product-image .content {
-    width: 100%;
-    height: inherit;
-
     display: flex;
     justify-content: center;
     align-items: center;
+   
 
     opacity: 0.5;
     transition: 0.5s;
@@ -75,6 +73,7 @@
 
 .grid-item:hover .product-sub-container.product-image .content {
     opacity: 1;
+   
 }
 
 .grid-item .product-sub-container.product-image .content img {
@@ -82,7 +81,7 @@
 }
 
 .grid-item .product-sub-container.product-information {
-    width: 125px;
+    width: 100%;
     height: 125px;
 
     position: relative;
@@ -100,9 +99,10 @@
     visibility: visible;
 }
 
-.grid-item .product-sub-container.product-information .content {
-    width: inherit;
-    height: fit-content;
+.grid-item .product-sub-container.product-information .content{
+    width: 100%;
+    margin-top: 10px;
+    border-bottom: 3px solid var(--primary-color);
 }
 
 .grid-item .product-sub-container.product-information .content p {
