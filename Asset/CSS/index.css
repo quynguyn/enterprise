@@ -14,7 +14,7 @@
 }
 
 .grid-item {
-    height: 247px;
+    height: 40vh;
     width: 240px;
     position: relative;
     cursor: pointer;
