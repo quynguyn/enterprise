@@ -1,0 +1,56 @@
+.main-container {
+    
+}
+.text-center {
+    text-align: center;
+}
+
+.row-inline {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.row-inline > .item {
+    flex: 33.33%;
+    padding: 10px;
+}
+
+.columns {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.column {
+    flex: 33.33%;
+    padding: 10px;
+}
+
+.columns .column:not(:first-child) {
+    border: 0px;
+    border-left: 3px;
+    border-style: solid;
+    border-color: #c5a364;
+}
+
+.item {
+    margin: 2px;
+    padding: 8px;
+    border-color: var(--main-color);
+    border: 1px;
+    border-style: solid;
+}
+
+input[type="textarea"] {
+    border: none;
+}
+
+.text-bold {
+    font-style: bold;
+}
+
+
+
