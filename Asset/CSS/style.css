@@ -2,7 +2,7 @@
     --main-color: #272727;
     --primary-color: #c5a364;
     --secondary-color: #DBC9a5;
-    --thired-color: #ffffff;
+    --third-color:#ffffff;
 }
 
 /* Reset CSS  */
@@ -151,4 +151,28 @@ footer .logo picture img {
 .social-media {
     height: 50px;
     width: 50px;
+}
+
+/* button */
+
+.btn{
+    background-color: var(--main-color); /* set the background color */
+    border: none; /* remove the border */
+    color: white; /* set the text color */
+    padding: 15px 32px; /* add some padding */
+    text-align: center; /* center the text */
+    text-decoration: none; /* remove underlines */
+    display: inline-block; /* display as an inline-block element */
+    font-size: 16px; /* set the font size */
+    margin: 4px 2px; /* add some margin */
+    cursor: pointer; /* add a cursor on hover */
+    margin-right: auto; /* push the button to the left */
+    border-radius: 5%;
+    text-transform: capitalize;
+}
+
+.btn:hover{
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(0,0,0,0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
 }
