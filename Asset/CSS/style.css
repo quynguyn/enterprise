@@ -2,7 +2,7 @@
     --main-color: #272727;
     --primary-color: #c5a364;
     --secondary-color: #DBC9a5;
-    --thired-color: #ffffff;
+    --third-color: #ffffff;
 }
 
 /* Reset CSS  */
@@ -41,7 +41,7 @@ header {
     display: flex;
     margin: 0px 5px;
     background-color: inherit;
-    color: var(--thired-color);
+    color: var(--third-color);
 }
 
 header .nav-part:last-child a {
@@ -58,7 +58,7 @@ header .search-bar {
     display: flex;
     font-size: 17px;
     border-radius: 15px;
-    background-color: var(--thired-color);
+    background-color: var(--third-color);
 }
 
 header .nav-part #magnifying-glass {
@@ -112,7 +112,7 @@ footer .nav-part {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--thired-color);
+    color: var(--third-color);
 }
 
 #contact-div {
@@ -125,7 +125,7 @@ footer .nav-part {
 }
 
 footer .nav-part:first-child {
-    border-right: 1px solid var(--thired-color);
+    border-right: 1px solid var(--third-color);
 }
 
 footer .logo picture img {
@@ -144,7 +144,7 @@ footer .logo picture img {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    color: var(--thired-color);
+    color: var(--third-color);
     margin-right: 20px;
 }
 
