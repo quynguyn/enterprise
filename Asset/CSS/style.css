@@ -49,6 +49,7 @@ header .nav-part:last-child a {
 }
 
 .nav-part a b {
+    color: var(--third-color);
     background-color: inherit;
 }
 
