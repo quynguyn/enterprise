@@ -47,22 +47,22 @@
 
 .group-container {
     display: block;
-    padding: 25px;
-    background-color: var(--primary-color);
-    border-radius: 55px;
+    /* background-color: var(--primary-color); */
 }
 
 .group-details {
     display: block;
     position: sticky;
     top: 110px;
-
     height: fit-content;
     top: calc(105px);
+    background-color: var(--primary-color);
+    border-radius: 55px;
+    padding: 25px;
 }
 
 .group-details p {
-    text-align: justify;
+    text-align: left;
 }
 
 .group-details .name {
@@ -79,5 +79,5 @@
     float: right;
     width: 150px;
     height: 150px;
-    border: 2px solid blue;  
+    border: 2px solid blue;
 }
