@@ -1,4 +1,6 @@
-
+.main-container {
+    margin: 10px;
+}
 .grid-container {
     height: inherit;
     width: inherit;
@@ -14,8 +16,8 @@
 }
 
 .grid-item {
-    height: 40vh;
-    width: 240px;
+    height: 25vw;
+    width: 20vw;
     position: relative;
     cursor: pointer;
 
@@ -38,7 +40,7 @@
 
 .grid-item .product-sub-container.product-image {
     width: 100%;
-    height: 100%;
+    height: 25vw;
 
     position: relative;
     
@@ -63,14 +65,12 @@
     justify-content: center;
     align-items: center;
    
-
     opacity: 0.5;
     transition: 0.5s;
 }
 
 .grid-item:hover .product-sub-container.product-image .content {
     opacity: 1;
-   
 }
 
 .grid-item .product-sub-container.product-image .content img {
@@ -88,7 +88,7 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    transform: translateY(-55px);
+    transform: translateY(-90px);
 }
 
 .grid-item:hover .product-sub-container.product-information {
