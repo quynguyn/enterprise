@@ -17,7 +17,7 @@
 
 .main-container {
     margin: 0px 15px;
-    
+
 }
 
 /* 
@@ -88,7 +88,7 @@ header .nav-part #magnifying-glass {
     background-color: transparent;
 }
 
-.logo picture img {
+header .logo picture img {
     display: flex;
     height: 100px;
     width: auto;
@@ -207,4 +207,149 @@ footer .logo picture img {
     box-shadow: 0 0.4rem 1.4rem 0 rgba(0, 0, 0, 0.5);
     transform: translateY(-0.1rem);
     transition: transform 150ms;
+}
+
+
+.icon-container {
+    display: none;
+}
+
+.icon-container img{
+    color: var(--primary-color);
+    height: 50px;
+    width: auto;
+}
+
+@media screen and (max-width: 960px) {
+    /* body {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template:
+            'header main'
+            'footer footer';
+    } */
+
+    header {
+        top: 0;
+        /* width: fit-content; */
+        /* height: 100%; */
+        background-color: var(--main-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        /* flex-direction: column; */
+        grid-area: header;
+        padding: 10px;
+    }
+
+    .main-container {
+        grid-area: main;
+    }
+
+    .nav-part {
+        height: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        /* flex-direction: column; */
+    }
+
+    header .nav-part a {
+        height: 50px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        background-color: inherit;
+        color: var(--third-color);
+    }
+
+    header .nav-part:last-child a {
+        margin-right: 10px;
+    }
+
+    header .nav-part a b {
+        display: none;
+    }
+
+    .icon-container {
+        display: block;
+    }
+
+    header .search-bar {
+        /* height: 32px;
+        width: auto;
+        display: flex;
+        font-size: 17px;
+        border-radius: 15px;
+        background-color: var(--third-color); */
+        display: none;
+    }
+
+    header .nav-part #magnifying-glass {
+        display: none;
+    }
+
+    .logo picture img {
+        display: flex;
+        height: auto;
+        width: 50px;
+        background-color: var(--main-color);
+        padding: 2px;
+    }
+
+    /* Style the search box inside the navigation bar */
+    header input[type=text] {
+        all: unset;
+        display: flex;
+        padding: 6px;
+        font-size: 17px;
+        border: none;
+        border-radius: 15px;
+        background-color: inherit;
+    }
+
+    header .nav-part #shopping-cart {
+        display: flex;
+        padding: 5px;
+        height: 50px;
+        width: auto;
+        background-color: inherit;
+        color: var(--secondary-color);
+    }
+
+    #contact-div, #about-div {
+        display: none;
+    }
+
+    footer .nav-part:first-child {
+        border-right: 1px solid var(--third-color);
+    }
+
+    footer .logo picture img {
+        display: flex;
+        height: 50px;
+        width: auto;
+        background-color: var(--main-color);
+        padding: 2px;
+    }
+
+    .social-media-div {
+        max-width: 350px;
+        height: inherit;
+        width: 25%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--third-color);
+        margin-right: 20px;
+    }
+
+    .social-media {
+        height: 50px;
+        width: 50px;
+    }
 }

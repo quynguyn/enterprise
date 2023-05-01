@@ -20,6 +20,7 @@
     margin-left: 80px;
     justify-content: space-between;
     padding: 40px;
+    word-wrap: break-word;
 }
 
 h1 {
@@ -47,8 +48,7 @@ textarea::placeholder {
     font-style: bold;
 }
 
-.name,
-.email {
+.name, .email {
     height: 60px;
 }
 
