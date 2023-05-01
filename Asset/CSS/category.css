@@ -21,23 +21,28 @@
 
 .products-container #title {
     color: var(--primary-color);
-    -webkit-text-stroke: 0.13vw #707070;
-    font-size: 4vw;
+    font-size: 4rem;
     font-weight: bold;
+    font-family: "Courier New";
+    padding: 20px 0px;
+    text-transform: capitalize;
+    text-decoration: underline;
+
 }
 
+/*  Main grid container */
 .grid-container {
     height: fit-content;
     width: inherit;
 
     display: grid;
     grid-template-columns: repeat(3, auto);
-    gap: 5px;
+    gap: 15px;
 
     padding: 5px;
     
     align-content: center;
-    /* border: 1px solid black; */
+
 }
 
 .product-img {
@@ -57,8 +62,11 @@
     overflow: hidden;
 
     background-color: var(--main-color);
-    /* border: 3px solid var(--primary-color); */
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
+
+.grid-item:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(197, 163, 100) 0px 0px 0px 3px;}
 
 .product-sub-container {
     transition: 0.5s;
@@ -90,6 +98,7 @@
 
 .grid-item:hover .product-sub-container.product-image {
     height: 50%;
+    
 }
 
 .product-sub-container.product-information {
@@ -118,37 +127,20 @@
     padding: 5px;
 }
 
-.title{
-    text-transform: uppercase;
-    font-size: 1.5vw; /* set the font size */
-    margin: 10px;
-    letter-spacing: 1.5px;
-    float: left;
-    margin-left: 0;
-}
-
-
-.btn-container {
-    max-width: 140px;
+.btn-container{
+    text-align: right;
 }
 
 .btn{
-    background-color: var(--main-color); /* set the background color */
-    border: none; /* remove the border */
-    color: white; /* set the text color */
-    padding: 10px 15px; /* add some padding */
-    text-align: center; /* center the text */
-    text-decoration: none; /* remove underlines */
-    display: block; /* display as an inline-block element */
-    font-size: 1.5vw; /* set the font size */
-    margin: 4px 2px; /* add some margin */
-    cursor: pointer; /* add a cursor on hover */
-    margin-right: auto; /* push the button to the left */
-    border-radius: 5%;
-    text-transform: capitalize;
-    max-width: 140px;
-    float: right;
+    padding: 10px;
 }
+
+.grid-item .product-information .content .title{
+    font-family: Helvetica;
+    padding: 5px 0px;
+    text-transform: capitalize;
+}
+
 
 
 @media screen and (min-width: 1400px) {
