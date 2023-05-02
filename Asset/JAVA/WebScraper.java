@@ -8,12 +8,11 @@ import org.jsoup.select.Elements;
 
 public class WebScraper {
     public static void main(String[] args) throws IOException {
-        inisilize();
+        initialize();
     }
 
-public static void inisilize() throws IOException{
+public static void initialize() throws IOException{
     // Gear VN getting data 
-
     // CPU
         getData("https://gearvn.com/collections/cpu-bo-vi-xu-ly?page=");
     // VGA
