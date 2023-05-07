@@ -16,20 +16,28 @@ public class WebScraper {
         // Gear VN getting data 
         // CPU
         getData("https://gearvn.com/collections/cpu-bo-vi-xu-ly?page=");
+        getDataTechZone("https://techzones.vn/cpu?pagenumber=");
         // VGA
         getData("https://gearvn.com/collections/vga-card-man-hinh?page=");
+        getDataTechZone("https://techzones.vn/vga?pagenumber=");
         // SSD
         getData("https://gearvn.com/collections/ssd-o-cung-the-ran?page=");
+        getDataTechZone("https://techzones.vn/ssd-gan-trong?pagenumber=");
         //Mother board 
-            getData("https://gearvn.com/collections/mainboard-bo-mach-chu?page=");
+        getData("https://gearvn.com/collections/mainboard-bo-mach-chu?page=");
+        getDataTechZone("https://techzones.vn/mainboard?pagenumber=");
         // RAM
-            getData("https://gearvn.com/collections/ram-pc?page=");
+        getData("https://gearvn.com/collections/ram-pc?page=");
+        getDataTechZone("https://techzones.vn/memory-ram?pagenumber=");
         // Cooler 
-            getData("https://gearvn.com/collections/fan-rgb-tan-nhiet-pc?page=");
+        getData("https://gearvn.com/collections/fan-rgb-tan-nhiet-pc?page=");
+        getDataTechZone("https://techzones.vn/tan-nhiet?pagenumber=");
         // Power Supply 
-            getData("https://gearvn.com/collections/psu-nguon-may-tinh?page=");
+        getData("https://gearvn.com/collections/psu-nguon-may-tinh?page=");
+        getDataTechZone("https://techzones.vn/psu?pagenumber=");
         // Case 
-            getData("https://gearvn.com/collections/case-thung-may-tinh?page=");
+        getData("https://gearvn.com/collections/case-thung-may-tinh?page=");
+        getDataTechZone("https://techzones.vn/case?pagenumber=");
     }
 
 
@@ -92,6 +100,49 @@ public class WebScraper {
         String url = name;
         url = url.replaceAll(" ", "%20");
         return url;
+    }
+
+    public static void getDataTechZone(String urlLink) throws IOException{
+        String baseUrl = urlLink;
+        int currentPage = 1;
+        int totalPages = 1;
+    
+        // Get the total number of pages
+        Document firstPage = Jsoup.connect(baseUrl + currentPage).get();
+        Element pagination = firstPage.selectFirst(".pagination");
+        if (pagination != null) {
+            Elements pageLinks = pagination.select("a[href]");
+            if (pageLinks.size() > 0) {
+                String lastPageUrl = pageLinks.last().attr("href");
+                String[] lastPageUrlParts = lastPageUrl.split("=");
+                totalPages = Integer.parseInt(lastPageUrlParts[lastPageUrlParts.length - 1]);
+            }
+        }
+    
+        // Iterate through all pages
+        while (currentPage <= totalPages) {
+            Document currentPageDoc = Jsoup.connect(baseUrl + currentPage).get();
+            Elements productItems = currentPageDoc.select(".product-item");
+    
+            // Extract product names and prices and IMG
+            for (Element productItem : productItems) {
+                Element productNameElement = productItem.selectFirst(".product-name").selectFirst("div");
+                String productName = productNameElement.text();
+                Element productPriceElement = productItem.selectFirst(".product-price").selectFirst("a");
+                String productPrice = "";
+                Element productImageElement = productItem.selectFirst(".product-img").selectFirst("img");
+                String productImage = productImageElement.attr("src");
+                // System.out.println(productImage);
+    
+                if (productPriceElement != null) {
+                    productPrice = productPriceElement.text();
+                }
+    
+                System.out.println("Name: " + productName + " | Price: " + productPrice+ " | IMG: " + productImage);
+            }
+    
+            currentPage++;
+        }
     }
 
 }
