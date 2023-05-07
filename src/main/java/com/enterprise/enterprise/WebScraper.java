@@ -19,7 +19,7 @@ public class WebScraper {
         // VGA
         getData("https://gearvn.com/collections/vga-card-man-hinh?page=");
         // SSD
-            getData("https://gearvn.com/collections/ssd-o-cung-the-ran?page=");
+        getData("https://gearvn.com/collections/ssd-o-cung-the-ran?page=");
         //Mother board 
             getData("https://gearvn.com/collections/mainboard-bo-mach-chu?page=");
         // RAM
