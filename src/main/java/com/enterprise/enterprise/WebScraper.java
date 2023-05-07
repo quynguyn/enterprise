@@ -15,7 +15,7 @@ public class WebScraper {
     public static void initialize() throws IOException{
         // Gear VN getting data 
         // CPU
-            getData("https://gearvn.com/collections/cpu-bo-vi-xu-ly?page=");
+        getData("https://gearvn.com/collections/cpu-bo-vi-xu-ly?page=");
         // VGA
         getData("https://gearvn.com/collections/vga-card-man-hinh?page=");
         // SSD
