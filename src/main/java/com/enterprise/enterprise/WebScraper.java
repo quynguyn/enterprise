@@ -7,7 +7,14 @@ import org.jsoup.select.Elements;
 public class WebScraper {
     public static void main(String[] args) throws IOException {
         /// initialize();
-        System.out.println(getPriceTechZones("KingMax DDR4 SODIMM"));
+        System.out.println(getPriceTechZones("Intel Core i5-11400 - 6C/12T 12MB Cache 4.40 GHz"));
+        System.out.println(getPriceTechZones("MSI B560M PRO-E"));
+        System.out.println(getPriceTechZones("Samsung DDR4 Desktop 16GB 2666MHz 1.2v"));
+        System.out.println(getPriceTechZones("KimTigo M.2 NVMe PCIe 3×4 - 256GB"));
+        System.out.println(getPriceTechZones("DeepCool PK450D"));
+        System.out.println(getPriceTechZones("GIGABYTE AORUS Radeon RX 7900 XTX ELITE 24G"));
+        System.out.println(getPriceTechZones("DeepCool CH510 Black"));
+
     }
 
     public static void initialize() throws IOException {
@@ -95,9 +102,10 @@ public class WebScraper {
     }
 
     public static String getPriceTechZones(String productName) throws IOException {
-        String urlName = productName.toLowerCase().replaceAll(" ", "-");
+        String urlName = productName.toLowerCase().replaceAll(" - ", "-").replaceAll(" ", "-").replaceAll("/", "")
+                .replaceAll("\\.", "").replaceAll("×", "");
         String urlProduct = "https://techzones.vn/" + urlName;
-
+        System.out.println(urlProduct);
         Document currentPageDoc = Jsoup.connect(urlProduct).get();
         Element productRows = currentPageDoc.selectFirst(".price-option");
         String price = productRows.text();
