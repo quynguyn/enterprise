@@ -163,3 +163,67 @@ public class WebScraper {
     }
 
 }
+import java.io.IOException;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+public class test {
+    public static void main(String[] args) throws IOException {
+        initialize();
+    }
+
+    public static void initialize() throws IOException {
+        // Gear VN getting data
+        // CPU
+        getDataTechZone("https://techzones.vn/cpu?pagenumber=");
+        // VGA
+        getDataTechZone("https://techzones.vn/vga?pagenumber=");
+        // SSD
+        getDataTechZone("https://techzones.vn/ssd-gan-trong?pagenumber=");
+        // Mother board
+        getDataTechZone("https://techzones.vn/mainboard?pagenumber=");
+        // RAM
+        getDataTechZone("https://techzones.vn/memory-ram?pagenumber=");
+        // Cooler
+        getDataTechZone("https://techzones.vn/tan-nhiet-khi?pagenumber=");
+        getDataTechZone("https://techzones.vn/tan-nhiet-nuoc-all-in-one?pagenumber=");
+        // Power Supply
+        getDataTechZone("https://techzones.vn/psu?pagenumber=");
+        // Case
+        getDataTechZone("https://techzones.vn/case?pagenumber=");
+    }
+
+    public static void getDataTechZone(String urlLink) throws IOException {
+        String baseUrl = urlLink;
+        int currentPage = 1;
+
+        // Get the total number of pages
+        Document firstPage = Jsoup.connect(baseUrl + currentPage).get();
+        Element pagination = firstPage.selectFirst(".ajaxresponsewrap");
+
+        // Iterate through all pages
+        while (pagination.selectFirst(".btn-loadmore") != null) {
+            Document currentPageDoc = Jsoup.connect(baseUrl + currentPage).get();
+            Elements productItems = currentPageDoc.select(".product-item");
+
+            // Extract product names and prices
+            for (Element productItem : productItems) {
+                Element productNameElement = productItem.selectFirst(".product-name").selectFirst("a");
+                String productName = productNameElement.text();
+                Element productPriceElement = productItem.selectFirst(".product-price").selectFirst("div");
+                String productPrice = "";
+                if (productPriceElement != null) {
+                    productPrice = productPriceElement.text();
+                }
+                System.out.println(
+                        "Name: " + productName + " | Price: " + productPrice + " | Current page: " + currentPage);
+            }
+
+            currentPage++;
+            pagination = Jsoup.connect(urlLink + currentPage).get().selectFirst(".ajaxresponsewrap");
+        }
+    }
+
+}
